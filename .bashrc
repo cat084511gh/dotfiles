@@ -1,8 +1,13 @@
 # alias
 alias vim='nvim'
 alias glo='git log --oneline'
+alias gst='git status'
 alias gui='kex --sl -s'
 alias ls='ls --color=auto'
+alias dceabe='docker-compose exec app bundle exec'
+
+# git
+source ~/.git-completion.bash
 
 # PS1
 function parse_git_branch {
