@@ -7,7 +7,7 @@ alias ls='ls --color=auto'
 alias dceabe='docker-compose exec app bundle exec'
 
 # git
-source ~/.git-completion.bash
+source ./git-completion.bash
 
 # PS1
 function parse_git_branch {
