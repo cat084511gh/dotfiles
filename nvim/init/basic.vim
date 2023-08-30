@@ -16,3 +16,13 @@ nnoremap tn :tabn<CR>
 " タブを閉じる
 nnoremap tx :tabclose<CR>
 
+" terminal :T
+command! -nargs=* T split | wincmd j | resize 10 | terminal <args>
+
+" hide tmux
+if !has('gui_running') && $TMUX !=# ''
+    augroup Tmux
+        autocmd!
+        autocmd VimEnter,VimLeave * silent !tmux set status
+    augroup END
+endif
