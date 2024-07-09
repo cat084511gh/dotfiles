@@ -23,28 +23,40 @@ This repository is for setting up the cat0 environment.
 # Key Config
 ### tmux
 - prefix
+  
   `Ctrl + a`
 - split pane vertically
+
   prefix + `\`
 - split pane horizontally
+
   prefix + `-`
 - move next pane
+  
   `Ctrl + o`
 - resize pane (left)
+  
   prefix + `H`
 - resize pane (under)
+  
   prefix + `J`
 - resize pane (up)
+  
   prefix + `K`
 - resize pane (right)
+  
   prefix + `L`
 - maximize pane
+  
   `Ctrl + z`
 - change window (left)
+  
   `Shift + left`
 - change window (right)
+  
   `Shift + right`
 - reload tmux settings
+  
   prefix + `r`
 
 ### nvim
