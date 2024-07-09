@@ -1,0 +1,6 @@
+/downloads/
+/bin/
+/nvim/plugin/
+/nvim/nvim
+/bashrc_load/*
+!/bashrc_load/.bashrc.alias
