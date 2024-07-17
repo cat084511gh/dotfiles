@@ -35,3 +35,8 @@ vim.api.nvim_set_keymap('n', 'k', '<Plug>(coc-references)', opts)
 vim.api.nvim_set_keymap('n', '<C-p>', ':FzfLua git_files<CR>', opts)
 vim.api.nvim_set_keymap('n', '<C-g>', ':FzfLua grep_project<CR>', opts)
 vim.api.nvim_set_keymap('n', 'fr', [[<cmd>lua require('fzf-lua').grep({ search = vim.fn.expand('<cword>') })<CR>]], opts)
+
+-- 次の変更 (Hunk) にジャンプ
+vim.api.nvim_set_keymap('n', ']c', "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'", { noremap = true, silent = true, expr = true })
+-- 前の変更 (Hunk) にジャンプ
+vim.api.nvim_set_keymap('n', '[c', "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'", { noremap = true, silent = true, expr = true })
