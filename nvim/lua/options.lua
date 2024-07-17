@@ -9,6 +9,8 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.clipboard = { 'unnamed', 'unnamedplus' }
 vim.opt.laststatus = 3
+vim.o.binary = true
+vim.o.eol = true
 
 -- hide tmux settings
 if not vim.fn.has('gui_running') and os.getenv('TMUX') then
