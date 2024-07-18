@@ -15,6 +15,10 @@ vim.api.nvim_set_keymap('n', '<S-W>', 'k', opts)
 vim.api.nvim_set_keymap('n', '<S-A>', 'h', opts)
 vim.api.nvim_set_keymap('n', '<S-S>', 'j', opts)
 vim.api.nvim_set_keymap('n', '<S-D>', 'l', opts)
+-- ノーマルモードでの行の先頭に移動 (h キー)
+vim.api.nvim_set_keymap('n', 'H', '0', opts)
+-- ノーマルモードでの行の最後に移動 (l キー)
+vim.api.nvim_set_keymap('n', 'L', '$', opts)
 
 -- tab操作用のキーマッピング
 vim.api.nvim_set_keymap('n', 'tp', ':tabp<CR>', opts)
@@ -28,8 +32,8 @@ vim.api.nvim_set_keymap('n', ' ', ':NvimTreeToggle<CR>', opts)
 vim.keymap.set("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : "<Tab>"', coc_opts)
 vim.keymap.set("i", "<S-TAB>", 'coc#pum#visible() ? coc#pum#prev(1) : "<C-h>"', coc_opts)
 vim.keymap.set("i", "<CR>", 'coc#pum#visible() ? coc#pum#confirm() : "<CR>"', coc_opts)
-vim.api.nvim_set_keymap('n', 'j', '<Plug>(coc-definition)', opts)
-vim.api.nvim_set_keymap('n', 'k', '<Plug>(coc-references)', opts)
+vim.api.nvim_set_keymap('n', '0', '<Plug>(coc-definition)', opts)
+vim.api.nvim_set_keymap('n', '9', '<Plug>(coc-references)', opts)
 
 -- fzf-luaを使用したプロジェクト内検索とファイル検索
 vim.api.nvim_set_keymap('n', '<C-p>', ':FzfLua git_files<CR>', opts)
@@ -40,3 +44,6 @@ vim.api.nvim_set_keymap('n', 'fr', [[<cmd>lua require('fzf-lua').grep({ search =
 vim.api.nvim_set_keymap('n', ']c', "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'", { noremap = true, silent = true, expr = true })
 -- 前の変更 (Hunk) にジャンプ
 vim.api.nvim_set_keymap('n', '[c', "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'", { noremap = true, silent = true, expr = true })
+
+-- noh
+vim.keymap.set('n', '<ESC><ESC>', ':noh<CR>')
