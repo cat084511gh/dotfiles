@@ -16,7 +16,7 @@ get_script_dir() {
 # PS1
 COLOR="119m" # GREEN
 [ -n "$SSH_TTY" ] && COLOR="208m" # ORANGE if SSH connection
-PS1="\[\e[0m\]\[\e[38;5;0m\]\[\e[48;5;$COLOR\] \W \[\e[0m\]\[\e[38;5;$COLOR\]\[\e[0m\]\[\e[1;31m\]\$(parse_git_branch)\n\[\e[00m\]\[\e[38;5;119m\]\[\e[0m\]$ "
+PS1="\[\e[38;5;$COLOR\]\W\[\e[0m\]\[\e[1;31m\]\$(parse_git_branch)\n\[\e[0m\]$ "
 
 REAL_BASHRC_DIR=$(get_script_dir)
 export PATH=$REAL_BASHRC_DIR/bin:$PATH

@@ -47,3 +47,5 @@ vim.api.nvim_set_keymap('n', '[c', "&diff ? '[c' : '<cmd>lua require\"gitsigns\"
 
 -- noh
 vim.keymap.set('n', '<ESC><ESC>', ':noh<CR>')
+-- gitsigns
+vim.api.nvim_set_keymap('n', 'g', ':lua require("gitsigns").blame_line{full=true}<CR>', { noremap = true, silent = true })
