@@ -18,14 +18,14 @@ deps: create_dirs
 	fi
 
 links:
-	# .bashrc
-	@if [ -L "$$HOME/.bashrc" ]; then \
-		ln -sf "$(DOTFILES_DIR)/.bashrc" $$HOME/.bashrc; \
-		elif [ -f "$$HOME/.bashrc" ]; then \
-			mv $$HOME/.bashrc $$HOME/.bashrc.backup; \
-			ln -sf "$(DOTFILES_DIR)/.bashrc" $$HOME/.bashrc; \
+	# .bash_profile
+	@if [ -L "$$HOME/.bash_profile" ]; then \
+		ln -sf "$(DOTFILES_DIR)/.bash_profile" $$HOME/.bash_profile; \
+		elif [ -f "$$HOME/.bash_profile" ]; then \
+			mv $$HOME/.bash_profile $$HOME/.bash_profile.backup; \
+			ln -sf "$(DOTFILES_DIR)/.bash_profile" $$HOME/.bash_profile; \
 		else \
-			ln -sf "$(DOTFILES_DIR)/.bashrc" $$HOME/.bashrc; \
+			ln -sf "$(DOTFILES_DIR)/.bash_profile" $$HOME/.bash_profile; \
 	fi
 	# .tmux.conf
 	@if [ -L "$$HOME/.tmux.conf" ]; then \
