@@ -5,6 +5,17 @@ parse_git_branch() {
   fi
 }
 
+get_script_dir() {
+  SOURCE="${BASH_SOURCE[0]}"
+  while [ -h "$SOURCE" ]; do
+    DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+  done
+  DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+  echo "$DIR"
+}
+
 # PS1
 COLOR="119m" # GREEN
 [ -n "$SSH_TTY" ] && COLOR="208m" # ORANGE if SSH connection
