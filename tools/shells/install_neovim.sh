@@ -21,10 +21,10 @@ git checkout $NEOVIM_VERSION
 if [ "$OS" = "Linux" ]; then
   if command -v apt-get > /dev/null; then
     sudo apt update
-    sudo apt install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl fzf ripgrep
+    sudo apt install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl fzf ripgrep node
   elif command -v yum > /dev/null; then
     sudo yum install -y epel-release
-    sudo yum install -y ninja-build gettext libtool autoconf automake cmake gcc-c++ pkgconfig unzip curl ripgrep
+    sudo yum install -y ninja-build gettext libtool autoconf automake cmake gcc-c++ pkgconfig unzip curl ripgrep node
 
     git clone https://github.com/junegunn/fzf.git
     fzf/install
@@ -36,7 +36,7 @@ if [ "$OS" = "Linux" ]; then
 elif [ "$OS" = "Darwin" ]; then
   if command -v brew > /dev/null; then
     brew update
-    brew install ninja gettext libtool autoconf automake cmake pkg-config unzip curl fzf ripgrep
+    brew install ninja gettext libtool autoconf automake cmake pkg-config unzip curl fzf ripgrep node
   else
     echo "No supported package manager found for macOS"
     exit 1
