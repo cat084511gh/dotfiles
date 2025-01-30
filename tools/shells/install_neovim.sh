@@ -6,7 +6,7 @@ OS=$(uname)
 NEOVIM_VERSION="v0.11.0"
 CURRENT_DIR=$(pwd)
 
-cd ./downloads
+cd ./tools/downloads
 
 if [ ! -d "neovim" ]; then
 	git clone https://github.com/neovim/neovim.git

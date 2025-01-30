@@ -1,5 +1,6 @@
 .DEFAULT_GOAL := all
-DOTFILES_DIR := $$PWD
+DOTFILES_DIR := $$PWD/dotfiles
+TOOLS_DIR := $$PWD/tools
 
 sample:
 	echo $(DOTFILES_DIR)
@@ -7,14 +8,14 @@ sample:
 all: create_dirs deps links
 
 create_dirs:
-	mkdir -p ./downloads ./bin $$HOME/.config
+	mkdir -p ./tools ./tools/downloads ./tools/bin $$HOME/.config
 
 deps: create_dirs
 	@if [ ! -f "./bin/tmux" ]; then \
-		./shells/install_tmux.sh; \
+		$(TOOLS_DIR)/shells/install_tmux.sh; \
 	fi
 	@if [ ! -f "./bin/nvim" ]; then \
-		./shells/install_neovim.sh; \
+		$(TOOLS_DIR)/shells/install_neovim.sh; \
 	fi
 
 links:
@@ -38,14 +39,14 @@ links:
 	fi
 	# .config
 	@if [ -L "$$HOME/.config/nvim" ]; then \
-		ln -sf "$(DOTFILES_DIR)/nvim" $$HOME/.config/nvim; \
+		ln -sf "$(TOOLS_DIR)/nvim" $$HOME/.config/nvim; \
 	elif [ -f "$$HOME/.config/nvim" ]; then \
 		mv $$HOME/.config/nvim $$HOME/.config/nvim.backup; \
-		ln -sf "$(DOTFILES_DIR)/nvim" $$HOME/.config/nvim; \
+		ln -sf "$(TOOLS_DIR)/nvim" $$HOME/.config/nvim; \
 	else \
-		ln -sf "$(DOTFILES_DIR)/nvim" $$HOME/.config/nvim; \
+		ln -sf "$(TOOLS_DIR)/nvim" $$HOME/.config/nvim; \
 	fi
 	# nvim
-	ln -sf "$(DOTFILES_DIR)/downloads/neovim/build/bin/nvim" "$(DOTFILES_DIR)/bin/nvim"
+	ln -sf "$(TOOLS_DIR)/downloads/neovim/build/bin/nvim" "$(TOOLS_DIR)/bin/nvim"
 	# tmux
-	ln -sf "$(DOTFILES_DIR)/downloads/tmux/tmux" "$(DOTFILES_DIR)/bin/tmux"
+	ln -sf "$(TOOLS_DIR)/downloads/tmux/tmux" "$(TOOLS_DIR)/bin/tmux"

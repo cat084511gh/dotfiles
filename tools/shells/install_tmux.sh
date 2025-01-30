@@ -6,7 +6,7 @@
 OS=$(uname)
 TMUX_VERSION="3.2"
 
-cd ./downloads
+cd ./tools/downloads
 
 if [ ! -d "tmux" ]; then
 	git clone https://github.com/tmux/tmux.git

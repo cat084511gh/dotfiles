@@ -21,7 +21,7 @@ ggl() {
 # PS1
 COLOR="119m" # GREEN
 [ -n "$SSH_TTY" ] && COLOR="208m" # ORANGE if SSH connection
-PS1="\n\[\e[38;5;$COLOR\]\W\[\e[0m\]\[\e[1;31m\]\$(parse_git_branch)\n\[\e[0m\]$ "
+PS1="\n\[\e[1m\]\[\e[38;5;$COLOR\]\W\[\e[0m\]\[\e[1;31m\]\$(parse_git_branch)\n\[\e[0m\]$ "
 
 REAL_BASHRC_DIR=$(get_script_dir)
 export PATH=$REAL_BASHRC_DIR/bin:$PATH
