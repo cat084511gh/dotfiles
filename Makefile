@@ -18,34 +18,30 @@ deps: create_dirs
 		$(TOOLS_DIR)/shells/install_neovim.sh; \
 	fi
 
+define create_symlink
+	@if [ -L "$(1)" ]; then \
+		ln -sf "$(2)" "$(1)"; \
+	elif [ -f "$(1)" ]; then \
+		mv "$(1)" "$(1).backup"; \
+		ln -sf "$(2)" "$(1)"; \
+	else \
+		ln -sf "$(2)" "$(1)"; \
+	fi
+endef
+
 links:
 	# .bash_profile
-	@if [ -L "$$HOME/.bash_profile" ]; then \
-		ln -sf "$(DOTFILES_DIR)/.bash_profile" $$HOME/.bash_profile; \
-		elif [ -f "$$HOME/.bash_profile" ]; then \
-			mv $$HOME/.bash_profile $$HOME/.bash_profile.backup; \
-			ln -sf "$(DOTFILES_DIR)/.bash_profile" $$HOME/.bash_profile; \
-		else \
-			ln -sf "$(DOTFILES_DIR)/.bash_profile" $$HOME/.bash_profile; \
-	fi
+	$(call create_symlink,$$HOME/.bash_profile,$(DOTFILES_DIR)/.bash_profile)
+
 	# .tmux.conf
-	@if [ -L "$$HOME/.tmux.conf" ]; then \
-		ln -sf "$(DOTFILES_DIR)/.tmux.conf" $$HOME/.tmux.conf; \
-	elif [ -f "$$HOME/.tmux.conf" ]; then \
-		mv $$HOME/.tmux.conf $$HOME/.tmux.conf.backup; \
-		ln -sf "$(DOTFILES_DIR)/.tmux.conf" $$HOME/.tmux.conf; \
-	else \
-		ln -sf "$(DOTFILES_DIR)/.tmux.conf" $$HOME/.tmux.conf; \
-	fi
-	# .config
-	@if [ -L "$$HOME/.config/nvim" ]; then \
-		ln -sf "$(TOOLS_DIR)/nvim" $$HOME/.config/nvim; \
-	elif [ -f "$$HOME/.config/nvim" ]; then \
-		mv $$HOME/.config/nvim $$HOME/.config/nvim.backup; \
-		ln -sf "$(TOOLS_DIR)/nvim" $$HOME/.config/nvim; \
-	else \
-		ln -sf "$(TOOLS_DIR)/nvim" $$HOME/.config/nvim; \
-	fi
+	$(call create_symlink,$$HOME/.tmux.conf,$(DOTFILES_DIR)/.tmux.conf)
+
+	# .config/tmux
+	$(call create_symlink,$$HOME/.config/tmux,$(TOOLS_DIR)/tmux)
+
+	# .config/nvim
+	$(call create_symlink,$$HOME/.config/nvim,$(TOOLS_DIR)/nvim)
+
 	# nvim
 	ln -sf "$(TOOLS_DIR)/downloads/neovim/build/bin/nvim" "$(TOOLS_DIR)/bin/nvim"
 	# tmux
