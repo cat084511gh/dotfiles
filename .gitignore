@@ -1,5 +1,5 @@
 tools/downloads/
-tools/bin/
+tools/bin/*
 tools/nvim/plugin/
 tools/nvim/nvim
 dotfiles/bashrc_load/*

@@ -24,7 +24,7 @@ COLOR="119m" # GREEN
 PS1="\n\[\e[1m\]\[\e[38;5;$COLOR\]\W\[\e[0m\]\[\e[1;31m\]\$(parse_git_branch)\n\[\e[0m\]$ "
 
 REAL_BASHRC_DIR=$(get_script_dir)
-export PATH=$REAL_BASHRC_DIR/bin:$PATH
+export PATH="$(realpath "$REAL_BASHRC_DIR/../tools/bin"):$PATH"
 
 BASHRC_FILES=($REAL_BASHRC_DIR/bashrc_load/.bashrc.*)
 

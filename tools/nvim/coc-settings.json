@@ -1,9 +1,0 @@
-{
-  {
-    "solargraph.diagnostics": true,
-    "solargraph.formatting": true,
-    "solargraph.references": true,
-    "solargraph.rename": true,
-    "solargraph.hover": true
-  }
-}
