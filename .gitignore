@@ -1,6 +1,6 @@
-/downloads/
-/bin/
-/nvim/plugin/
-/nvim/nvim
-/bashrc_load/*
-!/bashrc_load/.bashrc.alias
+tools/downloads/
+tools/bin/
+tools/nvim/plugin/
+tools/nvim/nvim
+dotfiles/bashrc_load/*
+!dotfiles/bashrc_load/.bashrc.alias
