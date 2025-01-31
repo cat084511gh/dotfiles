@@ -1,2 +1,2 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null)"
