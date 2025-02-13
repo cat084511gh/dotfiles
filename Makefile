@@ -49,3 +49,5 @@ links:
 	ln -sf "$(TOOLS_DIR)/downloads/neovim/build/bin/nvim" "$(TOOLS_DIR)/bin/nvim"
 	# tmux
 	ln -sf "$(TOOLS_DIR)/downloads/tmux/tmux" "$(TOOLS_DIR)/bin/tmux"
+	# fzf
+	ln -sf "$(TOOLS_DIR)/downloads/fzf/bin/fzf" "$(TOOLS_DIR)/bin/fzf"
