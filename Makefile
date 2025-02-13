@@ -42,9 +42,6 @@ links:
 	# .config/nvim
 	$(call create_symlink,$$HOME/.config/nvim,$(DOTFILES_DIR)/config/nvim)
 
-	# .config/alacritty
-	$(call create_symlink,$$HOME/.config/alacritty,$(DOTFILES_DIR)/config/alacritty)
-
 	# nvim
 	ln -sf "$(TOOLS_DIR)/downloads/neovim/build/bin/nvim" "$(TOOLS_DIR)/bin/nvim"
 	# tmux
