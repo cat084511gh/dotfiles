@@ -37,10 +37,10 @@ links:
 	$(call create_symlink,$$HOME/.tmux.conf,$(DOTFILES_DIR)/.tmux.conf)
 
 	# .config/tmux
-	$(call create_symlink,$$HOME/.config/tmux,$(TOOLS_DIR)/tmux)
+	$(call create_symlink,$$HOME/.config/tmux,$(DOTFILES_DIR)/config/tmux)
 
 	# .config/nvim
-	$(call create_symlink,$$HOME/.config/nvim,$(TOOLS_DIR)/nvim)
+	$(call create_symlink,$$HOME/.config/nvim,$(DOTFILES_DIR)/config/nvim)
 
 	# nvim
 	ln -sf "$(TOOLS_DIR)/downloads/neovim/build/bin/nvim" "$(TOOLS_DIR)/bin/nvim"
