@@ -36,8 +36,8 @@ links:
 	# .tmux.conf
 	$(call create_symlink,$$HOME/.tmux.conf,$(DOTFILES_DIR)/.tmux.conf)
 
-	# .config/tmux
-	$(call create_symlink,$$HOME/.config/tmux,$(DOTFILES_DIR)/config/tmux)
+	# .tmux
+	$(call create_symlink,$$HOME/.tmux,$(DOTFILES_DIR)/config/tmux)
 
 	# .config/nvim
 	$(call create_symlink,$$HOME/.config/nvim,$(DOTFILES_DIR)/config/nvim)
