@@ -17,6 +17,15 @@ deps: create_dirs
 	@if [ ! -f "./bin/nvim" ]; then \
 		$(TOOLS_DIR)/shells/install_neovim.sh; \
 	fi
+	@if [ ! -f "./bin/fzf" ]; then \
+		$(TOOLS_DIR)/shells/install_fzf.sh; \
+	fi
+	@if [ ! -f "./bin/go" ]; then \
+		$(TOOLS_DIR)/shells/install_go.sh; \
+	fi
+	@if [ ! -f "./bin/zk" ]; then \
+		$(TOOLS_DIR)/shells/install_zk.sh; \
+	fi
 
 define create_symlink
 	@if [ -L "$(1)" ]; then \
@@ -48,3 +57,5 @@ links:
 	ln -sf "$(TOOLS_DIR)/downloads/tmux/tmux" "$(TOOLS_DIR)/bin/tmux"
 	# fzf
 	ln -sf "$(TOOLS_DIR)/downloads/fzf/bin/fzf" "$(TOOLS_DIR)/bin/fzf"
+	# zk
+	ln -sf "$(TOOLS_DIR)/downloads/zk/zk" "$(TOOLS_DIR)/bin/zk"
