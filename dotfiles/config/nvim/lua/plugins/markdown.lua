@@ -1,0 +1,55 @@
+local min_width = 60
+return {
+  "MeanderingProgrammer/render-markdown.nvim",
+  opts = {
+    render_modes = { "n", "c", "t", "i" },
+    checkbox = {
+      enable = true,
+      position = "inline",
+    },
+    code = {
+      sign = false,
+      position = "right",
+      width = "full",
+      -- min_width = min_width,
+      left_pad = 1,
+      right_pad = 1,
+    },
+    heading = {
+      -- backgrounds = {},
+      sign = false,
+      border = true,
+      -- width = "belowock",
+      -- min_width = min_width,
+      -- below = "▔",
+      -- above = "▁",
+      left_pad = 0,
+      right_pad = 4,
+      position = "left",
+      icons = {
+        "█ ",
+        "██ ",
+        "███ ",
+        "████ ",
+        "█████ ",
+        "██████ ",
+      },
+      -- icons = {
+      --   "█ ",
+      --   "██ ",
+      --   "███ ",
+      --   "████ ",
+      --   "█████ ",
+      --   "██████ ",
+      -- },
+      -- icons = {
+      --   " ",
+      --   " ",
+      --   " ",
+      --   " ",
+      --   " ",
+      --   " ",
+      -- },
+    },
+  },
+}
